@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/assets/css/app.css" />
+    <title>Vue me</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="dude in characters">
+          <article>{{dude}}</article>
+        </li>
+      </ul>
+
+      <form class="add-new" @submit.prevent="characters.push(newDude)">
+        <input type="text" v-model="newDude" />
+      </form>
+
+      <p class="preview">{{ newDude }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./src/js/main.js"></script>
+  </body>
+</html>
